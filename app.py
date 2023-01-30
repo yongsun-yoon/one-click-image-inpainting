@@ -13,6 +13,12 @@ from lama_cleaner.schema import Config, HDStrategy, LDMSampler
 from transformers import AutoProcessor, AutoModelForUniversalSegmentation
 
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--device', type=str, default='cpu')
+args = parser.parse_args()
+
+
 def get_inpaint_config(**kwargs):
     data = dict(
         ldm_steps=1,
@@ -76,6 +82,6 @@ def main():
             st.image(inpainted_image)
 
 if __name__ == '__main__':
-    device = 'cpu'
+    device = args.device
     segment_processor, segment_model, inpaint_config, inpaint_model = load_models(device=device)
     main()
