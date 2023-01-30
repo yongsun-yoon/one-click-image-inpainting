@@ -1,0 +1,5 @@
+transformers
+lama-cleaner==0.34.0
+streamlit
+streamlit-image-coordinates
+# jinja2==3.0.0

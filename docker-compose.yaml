@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    container_name: one-click-image-inpainting
+    tty: true
+    ports:
+      - 8501:8501
+    volumes:
+      - .:/workspace
+    mem_limit: "8g"  # 2GB로 메모리 제한
